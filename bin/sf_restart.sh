@@ -4,8 +4,8 @@ echo
 echo -e "\033[33;1m--- RESTARTING APPLICATION ---\033[0m"
 echo
 
-sh vendor/bin/stop.sh
+./stop.sh
 
 echo
 
-sh vendor/bin/start.sh $1
+./start.sh $1
