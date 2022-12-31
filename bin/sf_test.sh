@@ -8,6 +8,6 @@ echo
 
 echo
 echo -e "\033[33;1mChecking dependencies\033[0m"
-composer require --dev symfony/test-pack
+composer require tests --dev
 
 symfony php bin/phpunit $1
