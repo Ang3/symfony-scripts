@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo
+echo -e "\033[43;30;1m---------------------------\033[0m"
+echo -e "\033[43;30;1m--- TESTING APPLICATION ---\033[0m"
+echo -e "\033[43;30;1m---------------------------\033[0m"
+echo
+
+echo
+echo -e "\033[33;1mChecking dependencies\033[0m"
+composer require --dev symfony/test-pack
+
+symfony php bin/phpunit $1

@@ -1,0 +1,23 @@
+{
+  "name": "ang3/symfony-scripts",
+  "type": "binary",
+  "description": "Symfony scripts to control app state.",
+  "keywords": ["scripts", "app", "state"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Joanis ROUANET",
+      "homepage": "https://github.com/Ang3"
+    }
+  ],
+  "bin": [
+    "bin/sf_reset.sh",
+    "bin/sf_restart.sh",
+    "bin/sf_start.sh",
+    "bin/sf_stop.sh",
+    "bin/sf_test.sh"
+  ],
+  "config": {
+    "sort-packages": true
+  }
+}
