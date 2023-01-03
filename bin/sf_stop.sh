@@ -12,5 +12,13 @@ if [ -f "docker-compose.yml" -o -f "docker-compose.yaml" ]
 then
   echo
   echo -e "\033[33;1mStopping Docker containers\033[0m"
-  docker-compose down
+  if [ -z "$1" ]
+  then
+    if [ "$1" = "reset" ]
+    then
+      docker-compose down -v
+    else
+      docker-compose down
+    fi
+  fi
 fi
