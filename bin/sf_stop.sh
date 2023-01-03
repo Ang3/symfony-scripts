@@ -16,7 +16,7 @@ then
   then
     if [ "$1" = "reset" ]
     then
-      docker-compose down -v
+      docker-compose down --volumes
     else
       docker-compose down
     fi
