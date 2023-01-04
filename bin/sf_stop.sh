@@ -13,12 +13,10 @@ then
   echo
   echo -e "\033[33;1mStopping Docker containers\033[0m"
   DOCKER_OPTIONS="--remove-orphans"
-  if [ -z "$1" ]
+  if [ "$1" = "reset" ]
   then
-    if [ "$1" = "reset" ]
-    then
-      DOCKER_OPTIONS="--remove-orphans --volumes"
-    fi
+    echo YES
+    DOCKER_OPTIONS="$DOCKER_OPTIONS --volumes"
   fi
   docker-compose down $DOCKER_OPTIONS
 fi
