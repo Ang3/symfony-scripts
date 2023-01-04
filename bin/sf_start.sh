@@ -6,9 +6,18 @@ echo -e "\033[33;1m--- STARTING APPLICATION ---\033[0m"
 # shellcheck disable=SC2166
 if [ -f "docker-compose.yml" -o -f "docker-compose.yaml" ]
 then
+  DOCKER_OPTIONS="--remove-orphans"
+  if [ -z "$1" ]
+  then
+    if [ "$1" = "reset" ]
+    then
+      DOCKER_OPTIONS="$DOCKER_OPTIONS --volumes"
+    fi
+  fi
+
   echo
   echo -e "\033[33;1mStarting Docker containers\033[0m"
-  docker-compose up -d
+  docker-compose up -d $DOCKER_OPTIONS
   sleep 3
 fi
 
