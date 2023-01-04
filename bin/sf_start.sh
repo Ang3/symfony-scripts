@@ -24,14 +24,11 @@ then
   echo -e "\033[33;1mInstalling Doctrine development dependencies\033[0m"
   composer require orm-fixtures zenstruck/foundry --dev
 
-  if [ -z "$1" ]
+  if [ "$1" = "reset" ]
   then
-    if [ "$1" = "reset" ]
-    then
-      echo -e "\033[33;1mReinitializing doctrine migrations files\033[0m"
-      rm -rf migrations/Version*.php
-      symfony console doctrine:migrations:diff
-    fi
+    echo -e "\033[33;1mReinitializing doctrine migrations files\033[0m"
+    rm -rf migrations/Version*.php
+    symfony console doctrine:migrations:diff
   fi
 
   echo
@@ -43,15 +40,12 @@ then
   symfony console doctrine:fixtures:load --no-interaction
 fi
 
-if [ -z "$1" ]
+if [ "$1" = "reset" ]
 then
-  if [ "$1" = "reset" ]
-  then
-    echo
-    echo -e "\033[33;1mDeleting cache and logs\033[0m"
-    rm -rf var/cache
-    rm -rf var/log
-  fi
+  echo
+  echo -e "\033[33;1mDeleting cache and logs\033[0m"
+  rm -rf var/cache
+  rm -rf var/log
 fi
 
 echo
