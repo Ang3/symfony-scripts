@@ -12,13 +12,13 @@ if [ -f "docker-compose.yml" -o -f "docker-compose.yaml" ]
 then
   echo
   echo -e "\033[33;1mStopping Docker containers\033[0m"
+  DOCKER_OPTIONS="--remove-orphans"
   if [ -z "$1" ]
   then
     if [ "$1" = "reset" ]
     then
-      docker-compose down --volumes --remove-orphans
-    else
-      docker-compose down
+      DOCKER_OPTIONS="$DOCKER_OPTIONS --volumes"
     fi
   fi
+  docker-compose down $DOCKER_OPTIONS
 fi
