@@ -16,7 +16,7 @@ then
   then
     if [ "$1" = "reset" ]
     then
-      docker-compose down --volumes
+      docker-compose down --volumes --remove-orphans
     else
       docker-compose down
     fi
