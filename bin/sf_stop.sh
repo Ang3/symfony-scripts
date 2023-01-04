@@ -15,7 +15,6 @@ then
   DOCKER_OPTIONS="--remove-orphans"
   if [ "$1" = "reset" ]
   then
-    echo YES
     DOCKER_OPTIONS="$DOCKER_OPTIONS --volumes"
   fi
   docker-compose down $DOCKER_OPTIONS
