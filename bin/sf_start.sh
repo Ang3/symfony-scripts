@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 echo
 echo -e "\033[33;1m--- STARTING APPLICATION ---\033[0m"

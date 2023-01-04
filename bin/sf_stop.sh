@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 echo
 echo -e "\033[33;1m--- STOPPING APPLICATION ---\033[0m"
@@ -17,7 +17,7 @@ then
   then
     if [ "$1" = "reset" ]
     then
-      DOCKER_OPTIONS="$DOCKER_OPTIONS --volumes"
+      DOCKER_OPTIONS="--remove-orphans --volumes"
     fi
   fi
   docker-compose down $DOCKER_OPTIONS
