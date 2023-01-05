@@ -1,4 +1,5 @@
-#!/usr/bin/env sh
+#!/bin/bash
+set -xeuo pipefail
 
 echo
 echo -e "\033[43;30;1m---------------------------\033[0m"

@@ -1,4 +1,5 @@
-#!/usr/bin/env sh
+#!/bin/bash
+set -xeuo pipefail
 
 echo
 echo -e "\033[33;1m--- RESTARTING APPLICATION ---\033[0m"
