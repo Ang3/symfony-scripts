@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+MODE=${1:-normal}
+
 echo
 echo -e "\033[33;1m--- STARTING APPLICATION ---\033[0m"
 
@@ -25,7 +27,7 @@ then
   echo -e "\033[33;1mInstalling Doctrine development dependencies\033[0m"
   composer require orm-fixtures zenstruck/foundry --dev
 
-  if [ "$1" = "reset" ]
+  if [ "$MODE" = "reset" ]
   then
     echo -e "\033[33;1mReinitializing doctrine migrations files\033[0m"
     rm -rf migrations/Version*.php
@@ -41,7 +43,7 @@ then
   symfony console doctrine:fixtures:load --no-interaction
 fi
 
-if [ "$1" = "reset" ]
+if [ "$MODE" = "reset" ]
 then
   echo
   echo -e "\033[33;1mDeleting cache and logs\033[0m"

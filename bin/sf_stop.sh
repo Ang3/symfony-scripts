@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+MODE=${1:-normal}
+
 echo
 echo -e "\033[33;1m--- STOPPING APPLICATION ---\033[0m"
 
@@ -14,7 +16,7 @@ then
   echo
   echo -e "\033[33;1mStopping Docker containers\033[0m"
   DOCKER_OPTIONS="--remove-orphans"
-  if [ "$1" = "reset" ]
+  if [ "$MODE" = "reset" ]
   then
     DOCKER_OPTIONS="$DOCKER_OPTIONS --volumes"
   fi
