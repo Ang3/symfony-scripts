@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -uo pipefail
 
 echo
 echo -e "\033[43;30;1m---------------------------\033[0m"
