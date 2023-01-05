@@ -1,5 +1,5 @@
 #!/bin/bash
-set -xeuo pipefail
+set -euo pipefail
 
 echo
 echo -e "\033[33;1m--- STARTING APPLICATION ---\033[0m"
