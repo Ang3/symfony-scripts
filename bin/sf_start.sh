@@ -18,6 +18,7 @@ fi
 echo
 echo -e "\033[33;1mComposer installation\033[0m"
 composer install
+composer require tests --dev
 
 isDoctrineInstalled=$(cat config/bundles.php | grep -c "DoctrineBundle::class")
 
