@@ -11,7 +11,6 @@
     }
   ],
   "bin": [
-    "bin/sf_reset.sh",
     "bin/sf_restart.sh",
     "bin/sf_start.sh",
     "bin/sf_stop.sh",
