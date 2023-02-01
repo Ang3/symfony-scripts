@@ -50,6 +50,13 @@ then
   echo -e "\033[33;1mDeleting cache and logs\033[0m"
   rm -rf var/cache
   rm -rf var/log
+
+  echo
+  echo -e "\033[33;1mRunning custom handlers\033[0m"
+  handlerResetFile=bin/dev/handlers/sf_reset.sh
+  if [ -f "$handlerResetFile" ]; then
+      $handlerResetFile $@
+  fi
 fi
 
 isWebpackInstalled=$(cat config/bundles.php | grep -c "WebpackEncoreBundle::class")
@@ -63,6 +70,13 @@ then
   echo
   echo -e "\033[33;1mCompiling assets\033[0m"
   yarn encore dev
+fi
+
+echo
+echo -e "\033[33;1mRunning custom handlers\033[0m"
+handlerFile=bin/dev/handlers/sf_start.sh
+if [ -f "$handlerFile" ]; then
+    $handlerFile $@
 fi
 
 echo

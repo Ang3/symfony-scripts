@@ -22,3 +22,10 @@ then
   fi
   docker-compose down $DOCKER_OPTIONS
 fi
+
+echo
+echo -e "\033[33;1mRunning custom handlers\033[0m"
+handlerFile=bin/dev/handlers/sf_stop.sh
+if [ -f "$handlerFile" ]; then
+    $handlerFile $@
+fi

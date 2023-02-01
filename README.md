@@ -41,3 +41,14 @@ To reset application (deleting cache, logs and migrations files), you just have 
 ```shell
 sf_restart.sh reset
 ```
+
+Handlers
+--------
+
+Handlers allows you to add custom logic. The script will try to execute some files depending on 
+its job. To add your custom shell code, create the related handler script:
+
+- `bin/dev/handlers/sf_start.sh` Executed just before starting the Web server.
+- `bin/dev/handlers/sf_stop.sh` Executed when Web server and Docker has been stopped.
+- `bin/dev/handlers/sf_reset.sh` Executed when you start with the argument `reset`, 
+  just after deleting cache and logs.
