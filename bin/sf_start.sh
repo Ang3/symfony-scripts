@@ -52,6 +52,19 @@ then
   rm -rf var/log
 fi
 
+isWebpackInstalled=$(cat config/bundles.php | grep -c "WebpackEncoreBundle::class")
+
+if [ $isWebpackInstalled -gt 0 ]
+then
+  echo
+  echo -e "\033[33;1mInstalling NodeJS dependencies\033[0m"
+  yarn install --force
+
+  echo
+  echo -e "\033[33;1mCompiling assets\033[0m"
+  yarn encore dev
+fi
+
 echo
 echo -e "\033[33;1mStarting web server\033[0m"
 symfony server:start -d
