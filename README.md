@@ -52,3 +52,4 @@ its job. To add your custom shell code, create the related handler script:
 - `bin/dev/handlers/sf_stop.sh` Executed when Web server and Docker has been stopped.
 - `bin/dev/handlers/sf_reset.sh` Executed when you start with the argument `reset`, 
   just after deleting cache and logs.
+- `bin/dev/handlers/sf_test.sh` Executed just before PHPUnit tests.
