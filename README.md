@@ -32,4 +32,12 @@ At the root of your project, execute these following command as to your needs:
 | sf_start.sh   | Start the application (Docker, web server, etc.)                                              |
 | sf_stop.sh    | Stop the application the application (Docker, web server, etc.)                               |
 | sf_restart.sh | Executes `sf_stop.sh` then `sf_start.sh`                                                      |
-| sf_reset.sh   | Executes `sf_restart.sh` with argument `reset` - Clear Doctrine migrations, cache, logs, etc. |
+
+### Reset the application
+
+To reset application (deleting cache, logs and migrations files), you just have to pass the argument 
+`reset` to the command `sf_restart.sh` like below:
+
+```shell
+sf_restart.sh reset
+```
